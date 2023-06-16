@@ -26,9 +26,16 @@ then
     echo "last is a number!"
 else
     echo "not a number!"
+    exit 1
 fi
 
-exit 0
+if ! [ "$last" -eq "$last" ] 2> /dev/null
+then
+    echo "last is not a number!"
+    exit 1
+else
+    echo "is a number!"
+fi
 
 # do the print
 
